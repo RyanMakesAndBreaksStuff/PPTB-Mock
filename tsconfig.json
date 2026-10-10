@@ -9,7 +9,7 @@
         "declarationMap": true,
         "types": ["@pptb/types","node"],
         "outDir": "dist",
-        "baseUrl": "./",
+        "paths": {"*": ["./*"]},
 
         /* Bundler mode */
         "moduleResolution": "bundler",

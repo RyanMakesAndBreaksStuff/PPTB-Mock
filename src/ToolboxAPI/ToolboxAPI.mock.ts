@@ -30,6 +30,8 @@ export class ToolboxAPIMock implements API {
     events: EventsAPIMock;
     fileSystem: FileSystemAPIMock;
     getToolContext: SinonMethodStub<API['getToolContext']>;
+    preventClose: SinonMethodStub<API['preventClose']>;
+    releasePreventClose: SinonMethodStub<API['releasePreventClose']>;
     invocation: InvocationAPIMock;
     settings: SettingsAPIMock;
     terminal: TerminalAPIMock;
@@ -47,6 +49,8 @@ export class ToolboxAPIMock implements API {
             instanceId: "mockInstanceId",
             "connectionUrl": "https://mock.environment.url",
         });
+        this.preventClose = stub();
+        this.releasePreventClose = stub();
         this.invocation = new InvocationAPIMock();
     }
 }
